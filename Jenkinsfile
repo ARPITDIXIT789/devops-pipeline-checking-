@@ -1,14 +1,14 @@
 pipeline {
     agent any
 
-   stage('Clone Repo') {
+    stages {
+       stage('Clone Repo') {
     steps {
         git branch: 'main',
             url: 'https://github.com/ARPITDIXIT789/devops-pipeline-checking-.git'
     }
 }
-
-
+    
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t arpitdixit78/devops-app:latest .'
